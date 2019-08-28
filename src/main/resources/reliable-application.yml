@@ -5,7 +5,11 @@ spring:
         output:
           destination: scstest
           content-type: application/json
+          producer:
+            error-channel-enabled: true
       kafka:
         binder:
           brokers: localhost
-
+          required-acks: all
+          producer-properties:
+            retries: 2
