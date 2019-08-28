@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: scstest
+          content-type: application/json
+          producer:
+            error-channel-enabled: true
+      kafka:
+        binder:
+          brokers: localhost
